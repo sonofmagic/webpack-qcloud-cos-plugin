@@ -1,17 +1,39 @@
 module.exports = {
-  "root": true,
-  "parserOptions": {
-    "parser": "babel-eslint",
-    "sourceType": "module"
+  'env': {
+    'commonjs': true,
+    'es6': true,
+    'node': true
   },
-  "env": {
-    "node": true
+  'extends': 'eslint:recommended',
+  'globals': {
+    'Atomics': 'readonly',
+    'SharedArrayBuffer': 'readonly',
+    //mocha
+    describe: true,
+    it: true
   },
-  "globals": {
-    "Promise": true,
-    // mocha 相关
-    "describe": true,
-    "it": true,
+  'parserOptions': {
+    'ecmaVersion': 2018
   },
-  "extends": "eslint:recommended"
+  'plugins': [
+    "mocha"
+  ],
+  'rules': {
+    'indent': [
+      'error',
+      2
+    ],
+    'linebreak-style': [
+      'error',
+      'unix'
+    ],
+    'quotes': [
+      'error',
+      'single'
+    ],
+    'semi': [
+      'error',
+      'never'
+    ]
+  }
 }
